@@ -1,7 +1,9 @@
 #ARGS
 ARG MOSQUITTO_TAG=${MOSQUITTO_TAG}
 
-FROM eclipse-mosquitto:${MOSQUITTO_TAG}
+FROM ubuntu:latest
 
-RUN apk update
-RUN apk add openssl make git
+RUN apt update && \
+  apt install -y mosquitto mosquitto-auth-plugin
+
+CMD ["/usr/sbin/mosquitto", "-c", "/etc/mosquitto/mosquitto.conf"]
