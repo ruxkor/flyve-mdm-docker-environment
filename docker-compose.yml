@@ -46,6 +46,8 @@ services:
       - ./www:${GLPIPATH}:z
       - ./docker/apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
       - ./docker/apache/httpd-vhosts.conf:/usr/local/apache2/conf/extra/httpd-vhosts.conf
+      - ../deeplink/site:/var/www/public/deeplink
+      - ../web-mdm-dashboard/build:/var/www/public/dashboard
     working_dir: ${GLPIPATH}
     ports:
       # http port
