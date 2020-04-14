@@ -69,7 +69,7 @@ services:
         GLPI_DB_NAME: ${GLPI_DB_NAME}
         GLPI_BRANCH: ${GLPI_BRANCH}
         GLPI_SOURCE: ${GLPI_SOURCE}
-        CLONNING_METHOD: ${CLONNING_METHOD}
+        CLONING_METHOD: ${CLONING_METHOD}
         GLPIPATH: ${GLPIPATH}
         DEFAULT_TIME_ZONE: ${DEFAULT_TIME_ZONE}
         FLYVEMDM_BRANCH: ${FLYVEMDM_BRANCH}
@@ -90,7 +90,6 @@ services:
     volumes:
       - ./www:${GLPIPATH}:z
       - ./docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
-      - ${HOST_CONFIG_SSH_PATH}:/root/.ssh:z #Your Access ssh keys
   glpi-phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: Glpi-Phpmyadmin
