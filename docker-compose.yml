@@ -92,6 +92,8 @@ services:
     volumes:
       - ./www:${GLPIPATH}:z
       - ./docker/php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./docker/php/glpi-cron:/etc/cron.d/glpi-cron
+      - ./docker/php/flyvemdm:/etc/init.d/flyvemdm
   glpi-phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: Glpi-Phpmyadmin
